@@ -5,7 +5,10 @@ export default function Header() {
     name: "text",
   };
   return (
-    <div className="flex xs:h-96 bg-primary xs:w-full xs:px-10 xs:flex-col xs:justify-center">
+    <div
+      className="flex xs:h-96 bg-primary xs:w-full xs:px-10 xs:flex-col xs:justify-center"
+      id="header"
+    >
       <h1 className="text-3xl font-medium">Beyond Apps.</h1>
       <h1 className="-mt-2 text-3xl font-medium">Beyond Imagination.</h1>
       <p className="xs:mt-3 opacity-85 text-lg">Leveraging AI for modern </p>

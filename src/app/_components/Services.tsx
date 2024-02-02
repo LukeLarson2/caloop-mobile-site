@@ -4,7 +4,10 @@ import services from "../_lib/services";
 
 export default function Services() {
   return (
-    <div className="text-night px-10 xs:py-24 items-center flex flex-col justify-center">
+    <div
+      className="text-night px-10 xs:py-24 items-center flex flex-col justify-center"
+      id="services"
+    >
       <h1 className="text-3xl font-semibold">Services</h1>
       {services.map((service) => {
         const { title, imageUrl, description } = service;

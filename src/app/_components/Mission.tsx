@@ -2,7 +2,7 @@
 
 export default function Mission() {
   return (
-    <div className="xs:h-auto xs:px-10 xs:py-32">
+    <div className="xs:h-auto xs:px-10 xs:py-32" id="mission">
       <h1 className="text-night text-3xl font-semibold xs:mb-3">Our Mission</h1>
       <p className="text-night leading-5 font-normal opacity-75">
         {`Our skilled team excels in developing accessible, scalable websites and

@@ -28,14 +28,20 @@ export default function Modal({
   return (
     <div
       onClick={() => handlePreview(false)}
-      className="fixed top-0 left-0 z-99999999 w-dvw h-dvh bg-night flex items-center justify-center"
+      className="fixed top-0 left-0 z-99999999 w-dvw h-dvh bg-night flex items-center justify-center pt-24"
     >
-      <FaChevronLeft onClick={(e) => handleChange(-1, e)} />
+      <FaChevronLeft
+        onClick={(e) => handleChange(-1, e)}
+        className="text-5xl w-16"
+      />
       <div
         style={{ backgroundImage: `url(/assets/images/${images[index]})` }}
         className="relative z-99999999 w-full h-96 bg-contain bg-no-repeat bg-center"
       />
-      <FaChevronRight onClick={(e) => handleChange(1, e)} />
+      <FaChevronRight
+        onClick={(e) => handleChange(1, e)}
+        className="text-5xl w-16"
+      />
     </div>
   );
 }

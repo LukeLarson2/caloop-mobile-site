@@ -8,7 +8,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
 
   return (
-    <div className="bg-primary h-auto w-full px-10 xs:py-24">
+    <div className="bg-primary h-auto w-full px-10 xs:py-24" id="contact">
       <h1 className="text-3xl text-center mb-16">Contact Us</h1>
       <div className="flex flex-col items-start h-auto">
         <label className="text-xl font-light">Name</label>
