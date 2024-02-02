@@ -4,6 +4,7 @@ import Header from "./_components/Header";
 import Mission from "./_components/Mission";
 import Portfolio from "./_components/Portfolio";
 import Services from "./_components/Services";
+import Contact from "./_components/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Mission />
       <Portfolio />
       <Services />
+      <Contact />
     </main>
   );
 }
