@@ -1,8 +1,15 @@
 "use client";
 
 export default function Header() {
-  const obj = {
-    name: "text",
+  const handleClick = (location: string) => {
+    const section = document.getElementById(location);
+    if (section) {
+      const offsetTop = section.offsetTop - 50;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
   return (
     <div
@@ -15,7 +22,10 @@ export default function Header() {
       <p className="xs:-mt-2 opacity-85 text-lg">
         web and mobile app solutions
       </p>
-      <button className="bg-light text-primary text-sm px-4 flex justify-center items-center w-full mt-5 h-9">
+      <button
+        className="bg-light text-primary text-sm px-4 flex justify-center items-center w-full mt-5 h-9"
+        onClick={() => handleClick("contact")}
+      >
         MAKE AN APPOINTMENT
       </button>
     </div>

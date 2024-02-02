@@ -56,21 +56,21 @@ export default function Contact() {
         onSubmit={handleSubmit}
         className="flex flex-col items-start h-auto"
       >
-        <label className="text-xl font-light">Name</label>
+        <label className="text-xl font-light">Name*</label>
         <input
           name="user_name" // Match this name attribute with your EmailJS template variable
           className="w-full py-1 px-2 outline-none text-night mb-8"
           type="text"
           required
         />
-        <label className="text-xl font-light">Email</label>
+        <label className="text-xl font-light">Email*</label>
         <input
           name="user_email" // Match this name attribute with your EmailJS template variable
           className="w-full py-1 px-2 outline-none text-night mb-8"
           type="email"
           required
         />
-        <label className="text-xl font-light">Message</label>
+        <label className="text-xl font-light">Message*</label>
         <textarea
           name="message" // Match this name attribute with your EmailJS template variable
           className="w-full h-64 resize-none p-2 text-night mb-8"
