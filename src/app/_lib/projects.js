@@ -3,7 +3,7 @@ const projects = [
     title: "JS Quest 2",
     imageUrl: "jsq2.jpg",
     description:
-      "AI story-driven, card-based mobile RPG, currently in beta testing with 29 active users.",
+      "AI story-driven, card-based mobile RPG, with in app purchases, currently in beta testing.",
     url: "https://jsquest2.up.railway.app/",
   },
   {

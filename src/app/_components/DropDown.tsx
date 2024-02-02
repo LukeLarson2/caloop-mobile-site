@@ -21,7 +21,7 @@ export default function DropDown({ onClose }: { onClose: any }) {
     }
   };
   return (
-    <div className="fixed top-32 left-0 bg-light w-dvw h-fit">
+    <div className="fixed top-32 left-0 bg-light w-dvw h-fit shadow-md shadow-slate-600">
       {links.map((link, index) => {
         return (
           <div
