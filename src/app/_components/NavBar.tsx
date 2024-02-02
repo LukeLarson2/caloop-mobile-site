@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function NavBar() {
   return (
-    <div className="flex fixed sm:items-end sm:justify-between xs:justify-between xs:items-end bg-white w-full text-xl p-4 sm:h-32 xs:h-32 shadow-md shadow-black z-20">
+    <div className="flex fixed sm:items-end sm:justify-between xs:justify-between xs:items-end bg-white w-full text-xl p-4 sm:h-32 xs:h-32 shadow-md shadow-slate-500 z-20">
       <div
         style={{
           backgroundImage: "url(/assets/images/caloop_mobile_llcdark_logo.png)",
