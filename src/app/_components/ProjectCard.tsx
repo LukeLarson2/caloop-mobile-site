@@ -20,7 +20,7 @@ export default function ProjectCard({
     <>
       {url === "images" ? (
         <div
-          className="xs:w-full xs:h-60 bg-top bg-no-repeat bg-cover shadow-md shadow-black my-14 flex flex-col justify-end"
+          className="xs:w-full xs:h-60 bg-top bg-no-repeat bg-cover shadow-md shadow-black my-14 flex flex-col justify-end xl:mx-20 xl:w-96 xl:h-96 xl:bg-left-top hover:opacity-75 hover:scale-95 transition-all duration-500 cursor-pointer"
           style={{
             backgroundImage: `url(/assets/images/${imageUrl})`,
           }}
@@ -34,7 +34,7 @@ export default function ProjectCard({
         </div>
       ) : (
         <div
-          className="xs:w-full xs:h-60 bg-top bg-no-repeat bg-cover shadow-md shadow-black my-14 flex flex-col justify-end"
+          className="xs:w-full xs:h-60 bg-top bg-no-repeat bg-cover shadow-md shadow-black my-14 flex flex-col justify-end xl:mx-20 xl:w-96 xl:h-96 xl:bg-left-top hover:opacity-75 hover:scale-95 transition-all duration-500 cursor-pointer xl:shadow-lg"
           style={{
             backgroundImage: `url(/assets/images/${imageUrl})`,
           }}
