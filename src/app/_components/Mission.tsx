@@ -11,7 +11,9 @@ export default function Mission() {
         Let's transform your ideas into reality with unmatched precision and
         confidence.`}
       </p>
-      <button className="bg-primary py-2 px-3 mt-4">CONTACT US</button>
+      <button className="bg-primary py-2 px-3 mt-6 w-full h-9 text-sm">
+        CONTACT US
+      </button>
     </div>
   );
 }

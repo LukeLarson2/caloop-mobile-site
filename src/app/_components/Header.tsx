@@ -12,7 +12,7 @@ export default function Header() {
       <p className="xs:-mt-2 opacity-85 text-lg">
         web and mobile app solutions
       </p>
-      <button className="bg-light text-primary text-sm px-4 flex justify-center items-center w-fit mt-5 h-8">
+      <button className="bg-light text-primary text-sm px-4 flex justify-center items-center w-full mt-5 h-9">
         MAKE AN APPOINTMENT
       </button>
     </div>
