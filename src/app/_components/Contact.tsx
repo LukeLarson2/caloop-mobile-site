@@ -49,12 +49,17 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-primary h-auto w-full px-10 xs:py-24" id="contact">
-      <h1 className="text-3xl text-center mb-16">Contact Us</h1>
+    <div
+      className="flex flex-col bg-primary h-auto w-full px-10 xs:py-24 xl:justify-center xl:items-center"
+      id="contact"
+    >
+      <h1 className="text-3xl text-center mb-16 xs:mb-8 xl:text-4xl">
+        Contact Us
+      </h1>
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="flex flex-col items-start h-auto"
+        className="flex flex-col items-start h-auto xl:w-1/2 xl:item"
       >
         <label className="text-xl font-light">Name*</label>
         <input
@@ -78,7 +83,7 @@ export default function Contact() {
         />
         <button
           type="submit"
-          className="xs:w-full bg-light text-primary xs:h-10 font-semibold xs:mt-8"
+          className="xs:w-full bg-light text-primary xs:h-10 font-semibold xs:mt-4 hover:opacity-85 transition-all"
         >
           {isSending ? "Submitting..." : "SUBMIT"}
         </button>

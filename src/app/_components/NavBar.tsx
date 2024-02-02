@@ -41,6 +41,7 @@ export default function NavBar() {
           backgroundImage: "url(/assets/images/caloop_mobile_llcdark_logo.png)",
         }}
         className="flex xl:w-64 xl:h-20 sm:w-32 xs:w-24 xs:h-8 bg-center bg-no-repeat bg-contain"
+        onClick={() => handleClick("header")}
       />
       <div className="flex justify-end items-center xl:w-full xs:w-32 xs:h-10">
         <div className="hidden xl:flex w-fit">
