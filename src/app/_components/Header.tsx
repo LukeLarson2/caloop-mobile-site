@@ -23,7 +23,7 @@ export default function Header() {
       <p className="xs:mt-3 opacity-85 text-lg xl:text-2xl">
         Leveraging AI for modern
       </p>
-      <p className="xs:-mt-2 opacity-85 text-lg xl:text-2xl">
+      <p className="xs:-mt-2 opacity-85 text-lg xl:text-2xl xl:mb-8">
         web and mobile app solutions
       </p>
       <button
