@@ -13,10 +13,12 @@ export default function Header() {
   };
   return (
     <div
-      className="flex xs:h-96 bg-primary xs:w-full xs:px-10 xs:flex-col xs:justify-center xl:px-28 xl:h-128 xl:items-center"
+      className="flex xs:h-128 bg-primary xs:w-full xs:px-10 xs:flex-col xs:justify-center xl:px-28 xl:h-128 xl:items-center"
       id="header"
     >
-      <h1 className="text-3xl font-medium xl:text-5xl xl:mb-2">Beyond Apps.</h1>
+      <h1 className="text-3xl font-medium xs:mt-10 xl:text-5xl xl:mb-2">
+        Beyond Apps.
+      </h1>
       <h1 className="-mt-2 text-3xl font-medium xl:text-5xl">
         Beyond Imagination.
       </h1>
