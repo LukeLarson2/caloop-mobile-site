@@ -15,9 +15,9 @@ export default function NavBar() {
   };
 
   const links = [
+    { name: "OUR MISSION", location: "mission" },
     { name: "PORTFOLIO", location: "portfolio" },
     { name: "SERVICES", location: "services" },
-    { name: "ABOUT US", location: "mission" },
     { name: "MAKE AN APPOINTMENT", location: "contact" },
   ];
 
@@ -35,7 +35,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex fixed top-0 left-0 sm:items-end sm:justify-between xl:px-24 xl:items-center xs:justify-between xs:items-end bg-white w-dvw text-xl p-4 sm:h-32 xs:h-32 shadow-md shadow-slate-600 z-20">
+    <div className="flex fixed top-0 left-0 sm:items-end sm:justify-between xl:px-24 xl:items-center xs:justify-between xs:items-end bg-white w-dvw text-xl p-4 sm:h-32 xs:h-18 shadow-md shadow-slate-600 z-20">
       <div
         style={{
           backgroundImage: "url(/assets/images/caloop_mobile_llcdark_logo.png)",
@@ -46,6 +46,7 @@ export default function NavBar() {
       <div className="flex justify-end items-center xl:w-full xs:w-32 xs:h-10 xl:items-baseline">
         <div className="hidden xl:flex w-fit ">
           <a
+            aria-label="Contact Caloop Mobile by phone"
             href={`tel:${phoneNumber}`}
             className="text-night opacity-75 px-4 w-fit flex flex-nowrap items-center cursor-pointer hover:opacity-50 transition-opacity absolute top-6 right-24"
           >
@@ -71,6 +72,14 @@ export default function NavBar() {
             );
           })}
         </div>
+        <a
+          aria-label="Contact Caloop Mobile by phone"
+          href={`tel:${phoneNumber}`}
+          style={{
+            backgroundImage: "url(/assets/images/dark_contact.png)",
+          }}
+          className="flex xl:w-64 xl:h-20 sm:w-6 xs:w-6 xs:h-6 bg-center bg-no-repeat bg-contain xs:mr-6 xl:hidden"
+        ></a>
         {showMenu ? (
           <>
             <IoCloseSharp
@@ -81,13 +90,6 @@ export default function NavBar() {
           </>
         ) : (
           <>
-            <a
-              href={`tel:${phoneNumber}`}
-              style={{
-                backgroundImage: "url(/assets/images/dark_contact.png)",
-              }}
-              className="flex xl:w-64 xl:h-20 sm:w-6 xs:w-6 xs:h-6 bg-center bg-no-repeat bg-contain xs:mr-6 xl:hidden"
-            ></a>
             <GiHamburgerMenu
               className="text-primary xs:w-8 xs:h-8 xl:hidden"
               onClick={() => setShowMenu(true)}

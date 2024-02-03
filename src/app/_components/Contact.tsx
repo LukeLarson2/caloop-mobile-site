@@ -57,22 +57,31 @@ export default function Contact() {
         onSubmit={handleSubmit}
         className="flex flex-col items-start h-auto xl:w-1/3 xl:item"
       >
-        <label className="text-xl font-light">Name*</label>
+        <label htmlFor="name" className="text-xl font-light">
+          Name*
+        </label>
         <input
+          id="name"
           name="user_name"
           className="w-full py-1 px-2 outline-none text-night mb-8"
           type="text"
           required
         />
-        <label className="text-xl font-light">Email*</label>
+        <label htmlFor="email" className="text-xl font-light">
+          Email*
+        </label>
         <input
+          id="email"
           name="user_email"
           className="w-full py-1 px-2 outline-none text-night mb-8"
           type="email"
           required
         />
-        <label className="text-xl font-light">Message*</label>
+        <label htmlFor="message" className="text-xl font-light">
+          Message*
+        </label>
         <textarea
+          id="message"
           name="message"
           className="w-full h-64 resize-none p-2 text-night mb-8"
           required

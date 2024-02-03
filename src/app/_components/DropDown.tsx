@@ -2,9 +2,9 @@
 
 export default function DropDown({ onClose }: { onClose: any }) {
   const links = [
+    { name: "OUR MISSION", location: "mission" },
     { name: "PORTFOLIO", location: "portfolio" },
     { name: "SERVICES", location: "services" },
-    { name: "ABOUT US", location: "mission" },
     { name: "MAKE AN APPOINTMENT", location: "contact" },
   ];
 
@@ -21,7 +21,7 @@ export default function DropDown({ onClose }: { onClose: any }) {
     }
   };
   return (
-    <div className="fixed top-32 left-0 bg-light w-dvw h-fit shadow-md shadow-slate-600">
+    <div className="fixed top-16 left-0 bg-light w-dvw h-fit shadow-md shadow-slate-600">
       {links.map((link, index) => {
         return (
           <div
