@@ -35,7 +35,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex fixed top-0 left-0 sm:items-end sm:justify-between xl:px-24 xl:items-center xs:justify-between xs:items-end bg-white w-full text-xl p-4 sm:h-32 xs:h-32 shadow-md shadow-slate-600 z-20">
+    <div className="flex fixed top-0 left-0 sm:items-end sm:justify-between xl:px-24 xl:items-center xs:justify-between xs:items-end bg-white w-dvw text-xl p-4 sm:h-32 xs:h-32 shadow-md shadow-slate-600 z-20">
       <div
         style={{
           backgroundImage: "url(/assets/images/caloop_mobile_llcdark_logo.png)",
@@ -43,8 +43,20 @@ export default function NavBar() {
         className="flex xl:w-64 xl:h-20 sm:w-32 xs:w-24 xs:h-8 bg-center bg-no-repeat bg-contain"
         onClick={() => handleClick("header")}
       />
-      <div className="flex justify-end items-center xl:w-full xs:w-32 xs:h-10">
-        <div className="hidden xl:flex w-fit">
+      <div className="flex justify-end items-center xl:w-full xs:w-32 xs:h-10 xl:items-baseline">
+        <div className="hidden xl:flex w-fit ">
+          <a
+            href={`tel:${phoneNumber}`}
+            className="text-night opacity-75 px-4 w-fit flex flex-nowrap items-center cursor-pointer hover:opacity-50 transition-opacity absolute top-6 right-24"
+          >
+            <div
+              style={{
+                backgroundImage: "url(/assets/images/dark_contact.png)",
+              }}
+              className="flex xl:w-4 xl:h-4 bg-center bg-no-repeat bg-contain mr-2"
+            />
+            541-868-5398
+          </a>
           {links.map((link) => {
             return (
               <div
@@ -68,10 +80,19 @@ export default function NavBar() {
             <DropDown onClose={handleCloseMenu} />
           </>
         ) : (
-          <GiHamburgerMenu
-            className="text-primary xs:w-8 xs:h-8 xl:hidden"
-            onClick={() => setShowMenu(true)}
-          />
+          <>
+            <a
+              href={`tel:${phoneNumber}`}
+              style={{
+                backgroundImage: "url(/assets/images/dark_contact.png)",
+              }}
+              className="flex xl:w-64 xl:h-20 sm:w-6 xs:w-6 xs:h-6 bg-center bg-no-repeat bg-contain xs:mr-6 xl:hidden"
+            ></a>
+            <GiHamburgerMenu
+              className="text-primary xs:w-8 xs:h-8 xl:hidden"
+              onClick={() => setShowMenu(true)}
+            />
+          </>
         )}
       </div>
     </div>

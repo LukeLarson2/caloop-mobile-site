@@ -9,16 +9,15 @@ export default function Contact() {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
     setIsSending(true);
-
-    if (formRef.current) {
-      const form = formRef.current;
+    const form = formRef.current;
+    if (form) {
       const formData = new FormData(form);
       const formProps = {
         from_name: "Caloop Mobile LLC",
-        to_name: formData.get("user_name"), // Assuming "Luke" is a constant recipient name
+        to_name: formData.get("user_name"),
         message: formData.get("message"),
         to_email: formData.get("user_email"),
       };
@@ -31,14 +30,11 @@ export default function Contact() {
           "0HB1tAOW6O6lCcLXz"
         )
         .then(
-          (result) => {
-            console.log(result.text);
-            setIsSending(false);
+          () => {
             setShowSuccess(true);
+            setIsSending(false);
+            form.reset();
             setTimeout(() => setShowSuccess(false), 3000);
-            if (formRef.current) {
-              formRef.current.reset();
-            }
           },
           (error) => {
             console.log(error.text);
@@ -59,35 +55,44 @@ export default function Contact() {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="flex flex-col items-start h-auto xl:w-1/2 xl:item"
+        className="flex flex-col items-start h-auto xl:w-1/3 xl:item"
       >
         <label className="text-xl font-light">Name*</label>
         <input
-          name="user_name" // Match this name attribute with your EmailJS template variable
+          name="user_name"
           className="w-full py-1 px-2 outline-none text-night mb-8"
           type="text"
           required
         />
         <label className="text-xl font-light">Email*</label>
         <input
-          name="user_email" // Match this name attribute with your EmailJS template variable
+          name="user_email"
           className="w-full py-1 px-2 outline-none text-night mb-8"
           type="email"
           required
         />
         <label className="text-xl font-light">Message*</label>
         <textarea
-          name="message" // Match this name attribute with your EmailJS template variable
+          name="message"
           className="w-full h-64 resize-none p-2 text-night mb-8"
           required
         />
         <button
           type="submit"
-          className="xs:w-full bg-light text-primary xs:h-10 font-semibold xs:mt-4 hover:opacity-85 transition-all"
+          disabled={isSending}
+          className={`xs:w-full bg-light text-primary xs:h-10 font-semibold xs:mt-4 ${
+            !isSending && "hover:opacity-85"
+          } transition-all ${isSending && "opacity-50"}`}
         >
           {isSending ? "Submitting..." : "SUBMIT"}
         </button>
-        {showSuccess && <FaCheck className="text-green-500" />}
+        <div
+          className={`success-checkmark ${
+            showSuccess ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-700`}
+        >
+          <FaCheck className="text-green-500 fixed -translate-x-1/2 top-1/2 left-1/2 z-50 bg-white rounded-full text-lg p-6 w-24 h-24 shadow-xl" />
+        </div>
       </form>
     </div>
   );
