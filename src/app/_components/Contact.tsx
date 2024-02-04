@@ -1,11 +1,39 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [titleAnimation, setTitleAnimation] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  // Function to check if the title is in the viewport with a buffer
+  const isElementInViewport = () => {
+    if (titleRef.current) {
+      const rect = titleRef.current.getBoundingClientRect();
+      // Calculate the threshold by multiplying the window's innerHeight by 0.4
+      const threshold = window.innerHeight * 0.01;
+      return rect.top - threshold < window.innerHeight;
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isElementInViewport() && !titleAnimation) {
+        setTitleAnimation(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [titleAnimation]);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -49,7 +77,12 @@ export default function Contact() {
       className="flex flex-col bg-primary h-auto w-full px-10 xs:py-24 xl:justify-center xl:items-center"
       id="contact"
     >
-      <h1 className="text-3xl text-center mb-16 xs:mb-8 xl:text-4xl">
+      <h1
+        ref={titleRef}
+        className={`text-3xl xs:mb-8 xl:text-4xl xl:my-16 ${
+          titleAnimation ? "slide-in-title slide-in" : "slide-in-title"
+        }`}
+      >
         Contact Us
       </h1>
       <form

@@ -15,7 +15,7 @@ export default function Home() {
     setShowModal(value);
   };
   return (
-    <main className="flex bg-light min-h-screen flex-col items-center justify-between xs:pt-18 overflow-x-hidden">
+    <main className="flex bg-light min-h-screen flex-col items-center justify-between xs:pt-18 xl:pt-20 overflow-x-hidden">
       {showModal && <Modal handlePreview={handlePreview} />}
       <Header />
       <Mission />
