@@ -4,7 +4,7 @@ export default function DropDown({ onClose }: { onClose: any }) {
   const links = [
     { name: "OUR MISSION", location: "mission" },
     { name: "PORTFOLIO", location: "portfolio" },
-    { name: "SERVICES", location: "services" },
+    { name: "FEATURES", location: "features" },
     { name: "MAKE AN APPOINTMENT", location: "contact" },
   ];
 

@@ -27,7 +27,7 @@ export default function Mission() {
         confidence.`}
       </p>
       <button
-        className="bg-primary py-2 px-3 mt-6 w-full h-9 text-sm xl:h-12 xl:text-xl xl:w-96 hover:opacity-75 transition-opacity"
+        className="bg-primary py-2 leading-relaxed px-3 mt-6 w-full h-9 text-sm xl:h-12 xl:text-xl xl:w-96 hover:opacity-75 transition-opacity duration-500"
         onClick={() => handleClick("contact")}
       >
         CONTACT US

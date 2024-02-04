@@ -1,6 +1,6 @@
 "use client";
 
-import products from "../_lib/products";
+import services from "../_lib/services";
 import { useState, useEffect, useRef } from "react";
 
 export default function Services() {
@@ -28,17 +28,6 @@ export default function Services() {
       return rect.top - threshold < window.innerHeight;
     }
     return false;
-  };
-
-  const handleClick = (location: string) => {
-    const section = document.getElementById(location);
-    if (section) {
-      const offsetTop = section.offsetTop - 50;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
   };
 
   useEffect(() => {
@@ -72,42 +61,51 @@ export default function Services() {
   }, [elementAnimation]);
   return (
     <div
-      className="text-night px-10 xs:py-24 w-full items-center flex flex-col justify-center bg-primary"
-      id="products"
+      className="text-night px-10 xs:py-24 items-center flex flex-col justify-center"
+      id="features"
     >
       <h1
         ref={titleRef}
-        className={`text-3xl xs:mb-16 xl:text-4xl xl:my-16 text-light ${
+        className={`text-3xl xl:text-4xl xl:my-16 ${
           elementAnimation ? "slide-in-title slide-in" : "slide-in-title"
         }`}
       >
-        Services
+        Features
       </h1>
-      <div className="flex xs:flex-col xl:flex-row xl:h-fit xl:w-full xl:flex-wrap xl:justify-center xl:mb-16">
-        {products.map((product) => {
-          const { title, description } = product;
+      <div className="flex xs:flex-col xl:flex-row xl:h-fit xl:w-3/5 xl:flex-wrap xl:justify-center xl:mb-16">
+        {services.map((service, index) => {
+          const { title, imageUrl, description } = service;
+          const even = index % 2 === 0 ? true : false;
+          let slideEffectA = "slide-in-title slide-in";
+          let slideEffectB = "slide-in-title";
+          if (even) {
+            slideEffectA = "slide-out-title slide-out";
+            slideEffectB = "slide-out-title";
+          }
           return (
             <div
               key={title}
-              className={`flex flex-col justify-center xl:mx-10 xs:mb-16 text-light ${
-                titleAnimation ? "slide-in-title slide-in" : "slide-in-title"
+              className={`flex flex-col justify-center xl:mx-10 ${
+                titleAnimation ? slideEffectA : slideEffectB
               }`}
               ref={elementRef}
             >
-              <h2 className="font-semibold text-xl text-left mt-3">{title}</h2>
-              <p className="font-light leading-4 text-lg mt-2 text-left xl:w-96">
+              <div
+                className="xs:w-full xs:h-20 bg-center bg-no-repeat bg-contain mt-24 flex flex-col justify-en"
+                style={{
+                  backgroundImage: `url(/assets/images/${imageUrl})`,
+                }}
+              />
+              <h2 className="font-semibold text-xl text-center mt-3">
+                {title}
+              </h2>
+              <p className="font-light leading-4 text-lg mt-2 text-center xl:w-96">
                 {description}
               </p>
             </div>
           );
         })}
       </div>
-      <button
-        className="bg-light text-primary py-2 px-3 mt-6 w-full h-9 text-sm leading-relaxed xl:h-12 xl:text-xl align-baseline flex justify-center xl:w-96 hover:opacity-75 transition-opacity duration-500"
-        onClick={() => handleClick("contact")}
-      >
-        REQUEST INFO
-      </button>
     </div>
   );
 }

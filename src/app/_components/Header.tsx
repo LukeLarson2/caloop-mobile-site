@@ -29,7 +29,7 @@ export default function Header() {
         web and mobile app solutions
       </p>
       <button
-        className="bg-light text-primary text-sm px-4 flex justify-center items-center w-full mt-5 h-9 xl:w-96 hover:opacity-75 transition-opacity xl:text-xl xl:h-12"
+        className="bg-light text-primary leading-relaxed text-sm px-4 flex justify-center items-center w-full mt-5 h-9 xl:w-96 hover:opacity-75 transition-opacity xl:text-xl xl:h-12 duration-500"
         onClick={() => handleClick("contact")}
       >
         MAKE AN APPOINTMENT

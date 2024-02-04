@@ -3,10 +3,12 @@
 import Header from "./_components/Header";
 import Mission from "./_components/Mission";
 import Portfolio from "./_components/Portfolio";
-import Services from "./_components/Services";
+import Features from "./_components/Features";
 import Contact from "./_components/Contact";
 import { useState } from "react";
 import Modal from "./_components/Modal";
+import AboutUs from "./_components/AboutUs";
+import Services from "./_components/Services";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +22,9 @@ export default function Home() {
       <Header />
       <Mission />
       <Portfolio handlePreview={handlePreview} showModal={showModal} />
+      <Features />
       <Services />
+      <AboutUs />
       <Contact />
     </main>
   );

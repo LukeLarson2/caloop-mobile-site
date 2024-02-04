@@ -122,7 +122,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={isSending}
-          className={`xs:w-full bg-light text-primary xs:h-10 font-semibold xs:mt-4 ${
+          className={`xs:w-full bg-light leading-relaxed duration-500 text-primary xs:h-10 font-semibold xs:mt-4 ${
             !isSending && "hover:opacity-85"
           } transition-all ${isSending && "opacity-50"}`}
         >

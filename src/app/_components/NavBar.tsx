@@ -17,7 +17,7 @@ export default function NavBar() {
   const links = [
     { name: "OUR MISSION", location: "mission" },
     { name: "PORTFOLIO", location: "portfolio" },
-    { name: "SERVICES", location: "services" },
+    { name: "FEATURES", location: "features" },
     { name: "MAKE AN APPOINTMENT", location: "contact" },
   ];
 
@@ -48,7 +48,7 @@ export default function NavBar() {
           <a
             aria-label="Contact Caloop Mobile by phone"
             href={`tel:${phoneNumber}`}
-            className="text-night opacity-75 px-4 w-fit flex flex-nowrap items-center cursor-pointer hover:opacity-50 transition-opacity absolute top-6 right-24"
+            className="text-night opacity-75 px-4 w-fit flex flex-nowrap items-center cursor-pointer hover:opacity-50 transition-opacity absolute top-6 right-24 duration-500"
           >
             <div
               style={{
@@ -65,7 +65,7 @@ export default function NavBar() {
                 className="h-16 flex items-center w-auto flex-nowrap"
                 onClick={() => handleClick(link.location)}
               >
-                <h1 className="text-night px-4 w-fit flex flex-nowrap  cursor-pointer hover:opacity-50 transition-opacity">
+                <h1 className="text-night px-4 w-fit flex flex-nowrap  cursor-pointer hover:opacity-50 transition-opacity duration-500">
                   {link.name}
                 </h1>
               </div>
