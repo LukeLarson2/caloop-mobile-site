@@ -73,12 +73,12 @@ export default function Services() {
   return (
     <div
       className="text-night px-10 xs:py-24 w-full items-center flex flex-col justify-center bg-primary"
-      id="products"
+      id="services"
     >
       <h1
         ref={titleRef}
-        className={`text-3xl xs:mb-16 xl:text-4xl xl:my-16 text-light ${
-          elementAnimation ? "slide-in-title slide-in" : "slide-in-title"
+        className={`text-3xl xs:mb-16 xl:text-4xl xl:mb-16 text-light ${
+          titleAnimation ? "slide-in-title slide-in" : "slide-in-title"
         }`}
       >
         Services
@@ -103,7 +103,7 @@ export default function Services() {
         })}
       </div>
       <button
-        className="bg-light text-primary py-2 px-3 mt-6 w-full h-9 text-sm leading-relaxed xl:h-12 xl:text-xl align-baseline flex justify-center xl:w-96 hover:opacity-75 transition-opacity duration-500"
+        className="bg-light text-primary py-2 px-3 w-full h-9 text-sm leading-relaxed xl:h-12 xl:text-xl align-baseline flex justify-center xl:w-96 hover:opacity-75 transition-opacity duration-500"
         onClick={() => handleClick("contact")}
       >
         REQUEST INFO

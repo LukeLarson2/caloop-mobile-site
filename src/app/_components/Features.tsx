@@ -66,13 +66,13 @@ export default function Services() {
     >
       <h1
         ref={titleRef}
-        className={`text-3xl xl:text-4xl xl:my-16 ${
+        className={`text-3xl xl:text-4xl ${
           elementAnimation ? "slide-in-title slide-in" : "slide-in-title"
         }`}
       >
         Features
       </h1>
-      <div className="flex xs:flex-col xl:flex-row xl:h-fit xl:w-3/5 xl:flex-wrap xl:justify-center xl:mb-16">
+      <div className="flex xs:flex-col xl:flex-row xl:h-fit xl:w-3/5 xl:flex-wrap xl:justify-center">
         {services.map((service, index) => {
           const { title, imageUrl, description } = service;
           const even = index % 2 === 0 ? true : false;

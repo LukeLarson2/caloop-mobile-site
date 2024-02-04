@@ -5,6 +5,8 @@ export default function DropDown({ onClose }: { onClose: any }) {
     { name: "OUR MISSION", location: "mission" },
     { name: "PORTFOLIO", location: "portfolio" },
     { name: "FEATURES", location: "features" },
+    { name: "SERVICES", location: "services" },
+    { name: "ABOUT US", location: "about_us" },
     { name: "MAKE AN APPOINTMENT", location: "contact" },
   ];
 

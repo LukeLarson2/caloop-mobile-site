@@ -81,13 +81,29 @@ export default function AboutUs() {
         Meet Our Founder
       </h1>
       <div
-        className={`xs:w-60 xs:h-60 bg-top bg-no-repeat bg-cover shadow-md shadow-black my-14 flex flex-col justify-end xl:mx-20 xl:w-96 xl:h-96 xl:bg-left-top xs:mb-18 ${
+        className={`xs:w-60 xs:h-60 bg-top bg-no-repeat bg-cover shadow-md shadow-black my-14 xs:mb-6 flex flex-col justify-end xl:mx-20 xl:w-96 xl:h-96 xl:bg-left-top ${
           titleAnimation ? "slide-out-title slide-out" : "slide-out-title"
         }`}
         style={{ backgroundImage: "url(/assets/images/profile-headshot.png)" }}
         ref={titleRef}
       />
-      <p className="text-night leading-5 font-normal opacity-75 xs:mb-8 xl:text-center xl:leading-6 xl:text-lg xl:mb-8">
+      <div className="flex w-full justify-evenly xs:mb-6 xl:justify-center">
+        <a
+          href="https://github.com/LukeLarson2"
+          className="text-night underline font-bold xl:mr-32 text-lg hover:opacity-50 transition-all duration-700"
+          target="_blank"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/lucas-m-larson/"
+          className="text-night underline font-bold text-lg hover:opacity-50 transition-all duration-700"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+      </div>
+      <p className="text-night leading-5 font-normal opacity-75 xs:mb-6 xl:text-center xl:leading-6 xl:text-lg xl:mb-8">
         {`Luke Larson, the founder and CEO of Caloop Mobile LLC, brings a decade of experience from his service in the US Navy to the tech industry. Married with two children, Larson is deeply passionate about software development, encompassing both websites and mobile applications. His innovative spirit is highlighted by his filing for two patents, showcasing his commitment to creativity and ingenuity. Larson's military background has honed his problem-solving skills and attention to detail, qualities he now applies to bring his clients' ideas to life through Caloop Mobile LLC.`}
       </p>
       <button
