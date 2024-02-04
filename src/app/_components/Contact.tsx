@@ -79,7 +79,7 @@ export default function Contact() {
     >
       <h1
         ref={titleRef}
-        className={`text-3xl xs:mb-8 xl:text-4xl xl:my-16 ${
+        className={`text-3xl xs:mb-8 xl:text-4xl text-center xl:my-16 ${
           titleAnimation ? "slide-in-title slide-in" : "slide-in-title"
         }`}
       >

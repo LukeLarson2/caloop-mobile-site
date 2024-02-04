@@ -11,14 +11,26 @@ interface PortfolioProps {
 
 const Portfolio: React.FC<PortfolioProps> = ({ handlePreview, showModal }) => {
   const [titleAnimation, setTitleAnimation] = useState(false);
+  const [elementAnimation, setElementAnimation] = useState(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const elementRef = useRef<HTMLHeadingElement>(null);
 
   // Function to check if the title is in the viewport with a buffer
+  const isTitleInViewport = () => {
+    if (titleRef.current) {
+      const rect = titleRef.current.getBoundingClientRect();
+      // Calculate the threshold by multiplying the window's innerHeight by 0.4
+      const threshold = window.innerHeight * 0.005;
+      return rect.top - threshold < window.innerHeight;
+    }
+    return false;
+  };
+
   const isElementInViewport = () => {
     if (titleRef.current) {
       const rect = titleRef.current.getBoundingClientRect();
       // Calculate the threshold by multiplying the window's innerHeight by 0.4
-      const threshold = window.innerHeight * 0.01;
+      const threshold = window.innerHeight * 0.5;
       return rect.top - threshold < window.innerHeight;
     }
     return false;
@@ -26,7 +38,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ handlePreview, showModal }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isElementInViewport() && !titleAnimation) {
+      if (isTitleInViewport() && !titleAnimation) {
         setTitleAnimation(true);
       }
     };
@@ -38,6 +50,21 @@ const Portfolio: React.FC<PortfolioProps> = ({ handlePreview, showModal }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [titleAnimation]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isElementInViewport() && !elementAnimation) {
+        setElementAnimation(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [elementAnimation]);
 
   return (
     <div
@@ -54,10 +81,21 @@ const Portfolio: React.FC<PortfolioProps> = ({ handlePreview, showModal }) => {
       </h1>
       {!showModal && (
         <div className="flex xs:flex-col xl:flex-row xl:h-fit xl:w-5/6 xl:flex-wrap xl:justify-center">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const { title, imageUrl, description, url } = project;
+            const even = index % 2 === 0 ? true : false;
+            let slideEffectA = "slide-in-title slide-in";
+            let slideEffectB = "slide-in-title";
+            if (even) {
+              slideEffectA = "slide-out-title slide-out";
+              slideEffectB = "slide-out-title";
+            }
             return (
-              <React.Fragment key={title}>
+              <div
+                key={title}
+                className={titleAnimation ? slideEffectA : slideEffectB}
+                ref={elementRef}
+              >
                 <ProjectCard
                   title={title}
                   imageUrl={imageUrl}
@@ -65,7 +103,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ handlePreview, showModal }) => {
                   url={url}
                   handlePreview={handlePreview}
                 />
-              </React.Fragment>
+              </div>
             );
           })}
         </div>
