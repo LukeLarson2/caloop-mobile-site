@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://caloopmobile.com
+
+# Sitemaps
+Sitemap: https://caloopmobile.com/sitemap.xml
